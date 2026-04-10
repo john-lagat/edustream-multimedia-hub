@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia Gallery</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        header { padding: 20px; text-align: center; }
+        #search { margin-bottom: 20px; }
+        .gallery { display: flex; flex-wrap: wrap; justify-content: center; }
+        .item { margin: 10px; cursor: pointer; }
+        .modal {
+            display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
+            overflow: auto; background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content { margin: 15% auto; display: block; width: 80%; max-width: 700px; }
+        .close { position: absolute; top: 15px; right: 35px; color: white; font-size: 40px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Multimedia Gallery</h1>
+    <input type="text" id="search" placeholder="Search...">
+    <select id="filter">
+        <option value="all">All</option>
+        <option value="image">Images</option>
+        <option value="audio">Audio</option>
+        <option value="video">Videos</option>
+    </select>
+</header>
+
+<div class="gallery" id="gallery">
+    <!-- Multimedia items will be dynamically loaded here -->
+</div>
+
+<div id="modal" class="modal">
+    <span class="close" id="closeModal">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <audio id="modalAudio" controls style="display:none;"></audio>
+    <video id="modalVideo" controls style="display:none;"></video>
+</div>
+
+<script>
+    const items = [
+        { type: 'image', src: 'path_to_image1.jpg', title: 'Image 1' },
+        { type: 'audio', src: 'path_to_audio1.mp3', title: 'Audio 1' },
+        { type: 'video', src: 'path_to_video1.mp4', title: 'Video 1' },
+        // More items...
+    ];
+
+    function loadItems(type) {
+        const gallery = document.getElementById('gallery');
+        gallery.innerHTML = '';
+        const filteredItems = items.filter(item => type === 'all' || item.type === type);
+        filteredItems.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'item';
+            div.innerHTML = item.type === 'image' ?
+                `<img src="${item.src}" alt="${item.title}" style="max-width:200px;">` :
+                item.type === 'audio' ?
+                `<p>${item.title}</p>` : 
+                `<video src="${item.src}" style="max-width:200px;"></video>`;
+            div.onclick = () => openModal(item);
+            gallery.appendChild(div);
+        });
+    }
+
+    function openModal(item) {
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modalImage');
+        const modalAudio = document.getElementById('modalAudio');
+        const modalVideo = document.getElementById('modalVideo');
+
+        if (item.type === 'image') {
+            modalImage.src = item.src;
+            modalImage.style.display = 'block';
+            modalAudio.style.display = 'none';
+            modalVideo.style.display = 'none';
+        } else if (item.type === 'audio') {
+            modalAudio.src = item.src;
+            modalAudio.style.display = 'block';
+            modalImage.style.display = 'none';
+            modalVideo.style.display = 'none';
+        } else if (item.type === 'video') {
+            modalVideo.src = item.src;
+            modalVideo.style.display = 'block';
+            modalImage.style.display = 'none';
+            modalAudio.style.display = 'none';
+        }
+        modal.style.display = 'block';
+    }
+
+    document.getElementById('closeModal').onclick = () => {
+        document.getElementById('modal').style.display = 'none';
+    };
+
+    document.getElementById('search').oninput = function() {
+        loadItems(document.getElementById('filter').value);
+    };
+
+    document.getElementById('filter').onchange = function() {
+        loadItems(this.value);
+    };
+
+    loadItems('all'); // Load all items initially
+</script>
+
+</body>
+</html>
