@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="EduStream Video Lab - Custom video player with playback controls and accessibility">
+    <meta name="author" content="John Doe">
+    <title>EduStream | Video Lab - Custom Video Player</title>
+    
+    <!-- Google Fonts - Two-link preconnect pattern -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    
+    <!-- Shared Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+   <!-- HEADER -->
+    <header>
+        <h1>EduStream Multimedia Learning Hub</h1>
+        <p><strong>Name:</strong> John Langat</p>
+        <p><strong>Reg No:</strong> INF/003/2021</p>
+        <p><strong>Course:</strong> INF 424</p>
+    </header>
+    <!-- MEDIA NAVIGATION SECTION -->
+     <nav class="media-nav">
+
+    <h2>Explore Learning Media</h2>
+
+    <ul class="nav-links">
+
+            <li>
+                <a href="index.html"> Home</a>
+            </li>
+
+            <li>
+                <a href="audio-player.html"> Audio</a>
+            </li>
+
+            <li>
+                <a href="video-player.html"> Video</a>
+            </li>
+
+            <li>
+                <a href="gallery.html"> Gallery</a>
+            </li>
+
+            <li>
+                <a href="animation.html"> Animation</a>
+            </li>
+
+    </ul>
+
+</nav>
+
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <h1> Video Learning Lab</h1>
+                <p>Custom video player with playback controls, speed selection, and fullscreen support</p>
+               
+            </div>
+        </div>
+
+        <div class="container video-lab-container">
+            <!-- PART B2: Custom Video Player -->
+            <div class="video-player-card">
+                <div class="video-wrapper">
+                    <!-- Video element with poster image -->
+                    <!-- No controls attribute - all controls built in HTML/JS -->
+                    <video id="videoPlayer" poster="assets/video/9198246-hd_1920_1080_25fps.mp4" preload="metadata" playsinline>
+                        <source src="assets/video/9198246-hd_1920_1080_25fps.mp4" type="video/mp4">
+                        <track kind="captions" label="English captions" srclang="en" default>
+                        Your browser does not support the video tag. Please download the tutorial video.
+                    </video>
+                    
+                    <!-- Custom Controls -->
+                    <div class="custom-video-controls">
+                        <button id="videoPlayPause" class="video-btn">
+                            <span>▶</span> Play
+                        </button>
+                        
+                        <div class="progress-container">
+                            <input type="range" id="videoSeekBar" value="0" step="0.01">
+                        </div>
+                        
+                        <div class="time-display">
+                            <span id="videoCurrentTime">0:00</span> / <span id="videoDuration">0:00</span>
+                        </div>
+                        
+                        <select id="playbackSpeed" class="speed-select">
+                            <option value="0.75">0.75x</option>
+                            <option value="1" selected>1x</option>
+                            <option value="1.25">1.25x</option>
+                            <option value="1.5">1.5x</option>
+                            <option value="2">2x</option>
+                        </select>
+                        
+                        <button id="fullscreenBtn" class="video-btn">
+                            <span>⛶</span> Fullscreen
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Status Display Panel - Shows video state machine -->
+                <div class="status-panel">
+                    <h4>📊 Video State Machine | Event-driven Status Display</h4>
+                    <div class="state-machine">
+                        <span class="state-badge" id="stateLoadstart">⏳ loadstart</span>
+                        <span class="state-badge" id="stateLoadeddata">📦 loadeddata</span>
+                        <span class="state-badge" id="statePlay">▶️ play</span>
+                        <span class="state-badge" id="statePlaying">🎬 playing</span>
+                        <span class="state-badge" id="statePause">⏸️ pause</span>
+                        <span class="state-badge" id="stateWaiting">⏳ waiting</span>
+                        <span class="state-badge" id="stateEnded">🏁 ended</span>
+                        <span class="state-badge" id="stateError">⚠️ error</span>
+                    </div>
+                    <div class="current-status" id="videoStatusDisplay">
+                        🟢 Current state: <strong id="currentVideoState">LOADING</strong> - Waiting for video to load...
+                    </div>
+                </div>
+                
+                <!-- Accessible Transcript Panel -->
+                <div class="transcript-panel">
+                    <h4>📝 Video Transcript / Caption Panel</h4>
+                    <div class="transcript-text">
+                        <p><strong>Welcome to the EduStream Introduction to Web Multimedia tutorial!</strong></p>
+                        <p>In this video, we'll explore the fundamentals of integrating audio, video, and interactive graphics into modern web applications. You'll learn about:</p>
+                        <ul style="margin: 0.5rem 0 0.5rem 1.5rem;">
+                            <li>The HTML5 Media API and its event-driven state machine</li>
+                            <li>Custom control implementation without browser defaults</li>
+                            <li>Event-driven programming patterns for media elements</li>
+                            <li>Creating accessible multimedia experiences for all users</li>
+                            <li>Web Audio API synthesis and signal graph architecture</li>
+                            <li>Canvas-based image processing and camera capture</li>
+                            <li>Responsive design principles for cross-device compatibility</li>
+                        </ul>
+                        <p>By the end of this course, you'll have built a complete Multimedia Learning Hub demonstrating all these concepts in practice. Let's get started!</p>
+                        <p style="margin-top: 0.75rem; font-style: italic; color: #64748b;">Duration: Approx. 3-5 minutes | Level: Intermediate</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Info Card: Event State Machine Explanation -->
+            <div class="video-info-card">
+                <h3> Understanding the Video State Machine</h3>
+                <div class="event-timeline">
+                    <div class="event-item">
+                        <span class="event-icon">📡</span>
+                        <span class="event-name">loadstart</span>
+                        <span class="event-desc">Browser begins loading the video metadata</span>
+                    </div>
+                    <div class="event-item">
+                        <span class="event-icon"></span>
+                        <span class="event-name">loadeddata</span>
+                        <span class="event-desc">First frame of video is loaded and ready</span>
+                    </div>
+                    <div class="event-item">
+                        <span class="event-icon">▶</span>
+                        <span class="event-name">play</span>
+                        <span class="event-desc">play() method is called - request to start</span>
+                    </div>
+                    <div class="event-item">
+                        <span class="event-icon"></span>
+                        <span class="event-name">playing</span>
+                        <span class="event-desc">Playback actually starts (buffer ready) - <strong>distinct from 'play'</strong></span>
+                    </div>
+                    <div class="event-item">
+                        <span class="event-icon">⏸</span>
+                        <span class="event-name">pause</span>
+                        <span class="event-desc">Playback is paused by user or system</span>
+                    </div>
+                    <div class="event-item">
+                        <span class="event-icon"></span>
+                        <span class="event-name">waiting</span>
+                        <span class="event-desc">Buffering - playback stalled while loading more data</span>
+                    </div>
+                    <div class="event-item">
+                        <span class="event-icon"></span>
+                        <span class="event-name">ended</span>
+                        <span class="event-desc">Video playback completes</span>
+                    </div>
+                    <div class="event-item">
+                        <span class="event-icon"></span>
+                        <span class="event-name">error</span>
+                        <span class="event-desc">An error occurred during loading or playback</span>
+                    </div>
+                </div>
+                <div class="poster-note">
+                     <strong>Poster Image:</strong> A poster image is displayed before the video loads and while loading, providing visual context to users.
+                </div>
+            </div>
+            
+            <!-- Keyboard Shortcuts Info -->
+            <div class="video-info-card">
+                <h3>⌨ Keyboard Shortcuts</h3>
+                <div class="event-timeline">
+                    <div class="event-item">
+                        <span class="event-icon">␣</span>
+                        <span class="event-name">Space</span>
+                        <span class="event-desc">Play / Pause video</span>
+                    </div>
+                    <div class="event-item">
+                        <span class="event-icon">◀</span>
+                        <span class="event-name">Left Arrow</span>
+                        <span class="event-desc">Seek backward 10 seconds</span>
+                    </div>
+                    <div class="event-item">
+                        <span class="event-icon">▶</span>
+                        <span class="event-name">Right Arrow</span>
+                        <span class="event-desc">Seek forward 10 seconds</span>
+                    </div>
+                    <div class="event-item">
+                        <span class="event-icon">🔊</span>
+                        <span class="event-name">M</span>
+                        <span class="event-desc">Mute / Unmute</span>
+                    </div>
+                    <div class="event-item">
+                        <span class="event-icon">⛶</span>
+                        <span class="event-name">F</span>
+                        <span class="event-desc">Fullscreen mode</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 EduStream Learning Hub</p>
+        <p>Developed by John Langat | INF 424 Multimedia Programming</p>
+    </footer>
+    <script src="script.js"></script>
+
+
+</body>
+</html>

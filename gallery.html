@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="EduStream Media Gallery - Component-based media library with live search">
+    <meta name="author" content="John Doe">
+    <title>EduStream | Media Gallery - Component Library</title>
+    
+    <!-- Google Fonts - Two-link preconnect pattern -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    
+    <!-- Shared Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+     <header>
+        <h1>EduStream Multimedia Learning Hub</h1>
+        <p><strong>Name:</strong> John Langat</p>
+        <p><strong>Reg No:</strong> INF/003/2021</p>
+        <p><strong>Course:</strong> INF 424</p>
+    </header>
+    <!-- MEDIA NAVIGATION SECTION -->
+     <nav class="media-nav">
+
+      <h2>Explore Learning Media</h2>
+
+        <ul class="nav-links">
+
+                <li>
+                    <a href="index.html"> Home</a>
+                </li>
+
+                <li>
+                    <a href="audio-player.html"> Audio</a>
+                </li>
+
+                <li>
+                    <a href="video-player.html"> Video</a>
+                </li>
+
+                <li>
+                    <a href="gallery.html"> Gallery</a>
+                </li>
+
+                <li>
+                    <a href="animation.html"> Animation</a>
+                </li>
+
+        </ul>
+
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <h1> Media Gallery</h1>
+                <p>Component-based media library with live search | Pure functions + Event delegation</p>
+                
+            </div>
+        </div>
+
+        <div class="container gallery-container">
+            <!-- Search Section -->
+            <div class="search-section">
+                <div class="search-wrapper">
+                    <div class="search-input-group">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="searchInput" class="search-input" placeholder="Search by title... (live filtering)">
+                    </div>
+                    <div class="search-stats">
+                        <span class="result-count" id="resultCount">8 items</span>
+                        <button id="clearSearchBtn" class="clear-search">Clear search ✕</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Media Grid - Cards will be rendered here -->
+            <div id="mediaGrid" class="media-grid">
+                <!-- JavaScript will render cards here -->
+                <div class="empty-state">
+                    <div class="empty-state-icon">🎬</div>
+                    <h3>Loading media library...</h3>
+                    <p>Please wait while we load the content</p>
+                </div>
+            </div>
+            
+            <!-- Event Delegation Click Log -->
+            <div class="click-log-panel">
+                <h4>🖱️ Event Delegation Log</h4>
+                <div class="click-log" id="clickLog">
+                    <p>📡 Click on any media card to see event delegation in action</p>
+                </div>
+                <button id="clearClickLog" class="clear-log-btn">Clear log</button>
+            </div>
+            
+           
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 EduStream Learning Hub</p>
+        <p>Developed by John Langat | INF 424 Multimedia Programming</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
