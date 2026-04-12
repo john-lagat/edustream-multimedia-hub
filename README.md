@@ -8,7 +8,7 @@ EduStream-Multimedia Learning Hub
 - Assignment: Practical Assignment - Multimedia Learning Hub
 
  Live Deployment
-[GitHub Pages URL - https://github.com/john-lagat/edustream-multimedia-hub]
+[GitHub Pages URL - https://john-lagat.github.io/edustream-multimedia-hub/
 
  Project Overview
 EduStream is a comprehensive multimedia learning platform demonstrating:
