@@ -7,7 +7,7 @@
                 id: 1,
                 title: "Introduction to HTML5 Multimedia",
                 type: "video",
-                thumbnailUrl: "assets/video/6671777-uhd_3840_2160_24fps.mp4",
+                thumbnailUrl: "assets/images/pexels-vantik93-18734744.jpg",
                 duration: "12:34",
                 description: "Learn the fundamentals of HTML5 multimedia elements including audio, video, and canvas."
             },
@@ -15,8 +15,8 @@
                 id: 2,
                 title: "Web Audio API Deep Dive",
                 type: "photo",
-                thumbnailUrl: "assets/images/sample.jpg",
-                duration: "08:22",
+                thumbnailUrl: "assets/images/pexels-shkrabaanthony-6609460.jpg",
+                duration: "null",
                 description: "Explore Web Audio API, oscillator nodes, gain nodes, and audio signal processing."
             },
             {
@@ -55,7 +55,7 @@
                 id: 7,
                 title: "CSS Grid Layout Guide",
                 type: "photo",
-                thumbnailUrl: "assets/images/pexels-mickael-ange-konan-2156070331-34526414.jpg",
+                thumbnailUrl: "assets/images/pexels-mizunokozuki-12899152.jpg",
                 duration: null,
                 description: "Visual guide to CSS Grid properties and responsive layouts."
             },
@@ -70,16 +70,16 @@
             {
                 id: 9,
                 title: "Web Performance Optimization",
-                type: "video",
-                thumbnailUrl: "assets/video/9198246-hd_1920_1080_25fps.mp4",
-                duration: "14:05",
+                type: "photo",
+                thumbnailUrl: "assets/images/pexels-mikhail-nilov-7988079.jpg",
+                duration: "null",
                 description: "Techniques for optimizing media loading and reducing CLS."
             },
             {
                 id: 10,
                 title: "East African Tech Ecosystem",
                 type: "photo",
-                thumbnailUrl: "assets/images/pexels-raul-sotomayor-2154397849-33265684.jpg",
+                thumbnailUrl: "assets/images/pexels-mikhail-nilov-7988748.jpg",
                 duration: null,
                 description: "Infographic showing technology adoption across East Africa."
             }

@@ -1120,3 +1120,416 @@ footer {
             font-size: 0.8rem;
             color: #92400e;
         }
+ 
+        /* Animations Lab Specific Styles */
+        .animations-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        /* Section Styles */
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .section-subtitle {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        /* ============================================
+           TASK C1: CSS LOADING SPINNER
+           ============================================ */
+        .spinner-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+        }
+        
+        .spinner-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #475569;
+        }
+        
+        /* CSS Loading Spinner */
+        /* Uses @keyframes animation, border-radius: 50%, border-top-color technique */
+        .loading-spinner {
+            width: 80px;
+            height: 80px;
+            border: 4px solid #e2e8f0;
+            border-top-color: #4f46e5;
+            border-right-color: #8b5cf6;
+            border-bottom-color: #10b981;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-bottom: 1rem;
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        /* Second spinner variant */
+        .loading-spinner-dual {
+            width: 60px;
+            height: 60px;
+            border: 3px solid transparent;
+            border-top-color: #f59e0b;
+            border-right-color: #ef4444;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+        
+        /* ============================================
+           TASK C1: CARD COMPONENT WITH CSS TRANSITIONS
+           Two properties transition smoothly: background-color and transform
+           ============================================ */
+        .cards-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .transition-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            /* transition: background-color 0.3s ease, transform 0.3s ease; */
+        }
+        
+        /* CSS transition on hover - two properties transition smoothly */
+        .transition-card:hover {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 20px 30px -10px rgba(79, 70, 229, 0.4);
+        }
+        
+        .transition-card:active {
+            transform: scale(0.98);
+        }
+        
+        .transition-card .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .transition-card h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .transition-card p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+        
+        /* ============================================
+           TASK C1: SVG DRAW-ON PATH ANIMATION
+           Using stroke-dasharray and stroke-dashoffset technique
+           Path draws itself from start to finish on page load
+           ============================================ */
+        .svg-draw-container {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-top: 1rem;
+        }
+        
+        .svg-draw-title {
+            color: white;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .draw-svg-wrapper {
+            display: flex;
+            justify-content: center;
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+        
+        .drawing-svg {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Draw-on path animation using stroke-dasharray and stroke-dashoffset */
+        .draw-path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawLine 3s ease-in-out forwards;
+        }
+        
+        .draw-path-delayed {
+            stroke-dasharray: 800;
+            stroke-dashoffset: 800;
+            animation: drawLine 2.5s ease-in-out 0.5s forwards;
+        }
+        
+        @keyframes drawLine {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        
+        /* Fade in animation for SVG elements */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out 2s forwards;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* ============================================
+           TASK C1: SECOND ANIMATED SVG
+           Minimum 6 SVG elements with CSS animation
+           Animates opacity, transform, and fill color
+           ============================================ */
+        .animated-svg-container {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .animated-svg-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #92400e;
+            font-weight: 600;
+        }
+        
+        .animated-svg-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .animated-svg {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* CSS animations for SVG elements */
+        .pulse-circle {
+            animation: pulse 2s ease-in-out infinite;
+            transform-origin: center;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.15);
+                opacity: 0.7;
+            }
+        }
+        
+        .bounce-rect {
+            animation: bounce 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        
+        .color-change {
+            animation: colorShift 3s ease-in-out infinite;
+        }
+        
+        @keyframes colorShift {
+            0% { fill: #ef4444; }
+            33% { fill: #10b981; }
+            66% { fill: #3b82f6; }
+            100% { fill: #ef4444; }
+        }
+        
+        .rotate-star {
+            animation: rotate 4s linear infinite;
+            transform-origin: 400px 200px;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .fade-text {
+            animation: fadeText 2s ease-in-out infinite;
+        }
+        
+        @keyframes fadeText {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        
+        /* ============================================
+           TASK C2: LIVE CAMERA FILTER
+           MediaDevices API + Canvas API
+           ============================================ */
+        .camera-section {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-radius: 28px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .camera-title {
+            color: white;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .camera-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .camera-preview {
+            background: #000;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .camera-preview video,
+        .camera-preview canvas {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .camera-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .camera-btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        
+        .camera-btn {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .camera-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+        }
+        
+        .camera-btn:active {
+            transform: translateY(0);
+        }
+        
+        .camera-btn.danger {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+        
+        .camera-btn.success {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+        
+        .error-message {
+            background: #7f1d1d;
+            color: #fca5a5;
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+        
+        .camera-status {
+            background: #334155;
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            color: #94a3b8;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .camera-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-card {
+                padding: 1.25rem;
+            }
+        }
+        
+        /* Animation Demo Grid */
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+    

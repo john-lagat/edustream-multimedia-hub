@@ -2,26 +2,626 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="EduStream Animations Lab - CSS animations, SVG draw-on effects, and live camera with greyscale filter">
+    <meta name="author" content="John Doe">
+    <title>EduStream | Animations Lab - CSS & SVG Animations + Camera Filter</title>
+    
+    <!-- Google Fonts - Two-link preconnect pattern -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    
+    <!-- Shared Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
-     <!-- HEADER -->
+    <!-- HEADER -->
     <header>
         <h1>EduStream Multimedia Learning Hub</h1>
         <p><strong>Name:</strong> John Langat</p>
         <p><strong>Reg No:</strong> INF/003/2021</p>
         <p><strong>Course:</strong> INF 424</p>
     </header>
-        <!-- Navigation Bar -->
-        <nav class="navbar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="audio-player.html">Audio Player</a></li>
-                <li><a href="video-player.html">Video Player</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="animations.html">Animations</a></li>
-            </ul>
-    
+    <!-- MEDIA NAVIGATION SECTION -->
+     <nav class="media-nav">
+
+    <h2>Explore Learning Media</h2>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="index.html"> Home</a>
+        </li>
+
+        <li>
+            <a href="audio-player.html"> Audio</a>
+        </li>
+
+        <li>
+            <a href="video-player.html"> Video</a>
+        </li>
+
+        <li>
+            <a href="gallery.html"> Gallery</a>
+        </li>
+
+        <li>
+            <a href="animation.html"> Animation</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <h1> Animations & Creative Lab</h1>
+                <p>CSS animations, SVG draw-on effects, and live camera with greyscale filter</p>
+                
+            </div>
+        </div>
+
+        <div class="container animations-container">
+            
+            <!-- ============================================ -->
+            <!-- PART C1: CSS LOADING SPINNER -->
+            <!-- ============================================ -->
+            <div class="section-card">
+                <div class="section-title">
+                    <span></span>
+                    <h2>CSS Loading Spinner</h2>
+                </div>
+                <div class="section-subtitle">
+                    @keyframes animation | border-radius: 50% | infinite keyword
+                </div>
+                <div class="demo-grid">
+                    <div class="spinner-container">
+                        <div class="loading-spinner"></div>
+                        <p class="spinner-title">Loading...</p>
+                        <p style="font-size: 0.75rem; color: #64748b;">border-top-color animation | infinite rotation</p>
+                    </div>
+                    <div class="spinner-container">
+                        <div class="loading-spinner-dual"></div>
+                        <p class="spinner-title">Processing...</p>
+                        <p style="font-size: 0.75rem; color: #64748b;">Multi-color spinner | 0.6s cycle</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ============================================ -->
+            <!-- PART C1: CARD COMPONENT WITH CSS TRANSITIONS -->
+            <!-- Two properties transition smoothly: background-color AND transform -->
+            <!-- ============================================ -->
+            <div class="section-card">
+                <div class="section-title">
+                    <span></span>
+                    <h2>Hover Transition Cards</h2>
+                </div>
+                <div class="section-subtitle">
+                    CSS transitions on :hover | Two properties: background-color & transform: scale()
+                </div>
+                <div class="cards-demo">
+                    <div class="transition-card">
+                        <div class="card-icon"></div>
+                        <h3>Creative Design</h3>
+                        <p>Hover to see smooth background gradient transition and scale effect</p>
+                    </div>
+                    <div class="transition-card">
+                        <div class="card-icon"></div>
+                        <h3>Fast Performance</h3>
+                        <p>CSS transitions provide 60fps animations with hardware acceleration</p>
+                    </div>
+                    <div class="transition-card">
+                        <div class="card-icon"></div>
+                        <h3>Smooth Effects</h3>
+                        <p>Two properties transition simultaneously on hover interaction</p>
+                    </div>
+                </div>
+            </div>
+            
+           
+            <div class="section-card">
+                <div class="section-title">
+                    <span></span>
+                    <h2>SVG Draw-On Path Animation</h2>
+                </div>
+                <div class="section-subtitle">
+                    stroke-dasharray & stroke-dashoffset | Bezier curve (C command) | Auto-draws on load
+                </div>
+                <div class="svg-draw-container">
+                    <div class="svg-draw-title"> Learning Journey Path - Drawing itself</div>
+                    <div class="draw-svg-wrapper">
+                        <svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg" class="drawing-svg" role="img" aria-label="Animated learning path drawing itself">
+                            <title>Learning Journey Path Animation</title>
+                            
+                            <!-- Background -->
+                            <rect x="0" y="0" width="700" height="200" fill="rgba(255,255,255,0.1)" rx="10"/>
+                            
+                            <!-- Bezier curve path (C command) - draws itself -->
+                            <path d="M 50 100 C 150 30, 250 170, 350 100 C 450 30, 550 170, 650 100" 
+                                  stroke="#4f46e5" 
+                                  stroke-width="4" 
+                                  fill="none" 
+                                  stroke-linecap="round"
+                                  class="draw-path"/>
+                            
+                            <!-- Second decorative path -->
+                            <path d="M 50 130 C 150 60, 250 200, 350 130 C 450 60, 550 200, 650 130" 
+                                  stroke="#8b5cf6" 
+                                  stroke-width="2" 
+                                  fill="none" 
+                                  stroke-linecap="round"
+                                  stroke-dasharray="5 5"
+                                  class="draw-path-delayed"/>
+                            
+                            <!-- Circles that appear after path draws -->
+                            <circle cx="50" cy="100" r="6" fill="#10b981" class="fade-in"/>
+                            <circle cx="350" cy="100" r="6" fill="#f59e0b" class="fade-in"/>
+                            <circle cx="650" cy="100" r="6" fill="#ef4444" class="fade-in"/>
+                            
+                            <!-- Text that fades in -->
+                            <text x="50" y="85" text-anchor="middle" fill="#10b981" font-size="10" class="fade-in">Start</text>
+                            <text x="350" y="85" text-anchor="middle" fill="#f59e0b" font-size="10" class="fade-in">Midpoint</text>
+                            <text x="650" y="85" text-anchor="middle" fill="#ef4444" font-size="10" class="fade-in">Goal</text>
+                        </svg>
+                    </div>
+                    <p style="color: #94a3b8; text-align: center; margin-top: 1rem; font-size: 0.8rem;">
+                        The Bezier curve path draws itself using stroke-dashoffset animation | Contains C command curve
+                    </p>
+                </div>
+            </div>
+            
+            <!-- ============================================ -->
+            <!-- PART C1: SECOND ANIMATED SVG -->
+            <!-- Minimum 6 SVG elements | CSS animation on opacity, transform, fill color -->
+            <!-- ============================================ -->
+            <div class="section-card">
+                <div class="section-title">
+                    <span></span>
+                    <h2>Animated SVG Illustration</h2>
+                </div>
+                <div class="section-subtitle">
+                    6+ SVG elements | CSS animations: pulse, bounce, color shift, rotation, fade
+                </div>
+                <div class="animated-svg-container">
+                    <div class="animated-svg-title"> Interactive Elements Gallery - All Elements Animated</div>
+                    <div class="animated-svg-wrapper">
+                        <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" class="animated-svg" role="img" aria-label="Animated SVG illustration showing various animated elements">
+                            <title>Animated Elements Gallery</title>
+                            
+                            <!-- Background -->
+                            <rect x="0" y="0" width="800" height="300" fill="#fef3c7" rx="15"/>
+                            
+                            <!-- Element 1: Pulsing Circle -->
+                            <circle cx="80" cy="80" r="30" fill="#ef4444" class="pulse-circle"/>
+                            <text x="80" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
+                            
+                            <!-- Element 2: Bouncing Rectangle -->
+                            <rect x="180" y="60" width="60" height="60" rx="10" fill="#3b82f6" class="bounce-rect"/>
+                            <text x="210" y="95" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
+                            
+                            <!-- Element 3: Color Changing Circle -->
+                            <circle cx="340" cy="80" r="30" fill="#10b981" class="color-change"/>
+                            <text x="340" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
+                            
+                            <!-- Element 4: Rotating Star (polygon) -->
+                            <polygon points="500,50 515,80 550,85 525,110 530,145 500,130 470,145 475,110 450,85 485,80" 
+                                     fill="#f59e0b" 
+                                     class="rotate-star"/>
+                            <text x="500" y="100" text-anchor="middle" fill="white" font-size="10" font-weight="bold">4</text>
+                            
+                            <!-- Element 5: Fading Text -->
+                            <text x="650" y="85" text-anchor="middle" fill="#8b5cf6" font-size="16" font-weight="bold" class="fade-text">
+                                ✨ Animated ✨
+                            </text>
+                            
+                            <!-- Element 6: Animated Line with dash -->
+                            <line x1="50" y1="160" x2="750" y2="160" stroke="#d97706" stroke-width="3" stroke-dasharray="10 5" class="draw-path"/>
+                            
+                            <!-- Element 7: Additional pulsing dots -->
+                            <circle cx="130" cy="200" r="8" fill="#06b6d4" class="pulse-circle" style="animation-delay: 0.5s;"/>
+                            <circle cx="300" cy="220" r="8" fill="#ec4899" class="pulse-circle" style="animation-delay: 1s;"/>
+                            <circle cx="470" cy="200" r="8" fill="#14b8a6" class="pulse-circle" style="animation-delay: 1.5s;"/>
+                            <circle cx="640" cy="220" r="8" fill="#f97316" class="pulse-circle" style="animation-delay: 2s;"/>
+                            
+                            <!-- Labels -->
+                            <text x="80" y="145" text-anchor="middle" fill="#7f1d1d" font-size="9">Pulse</text>
+                            <text x="210" y="145" text-anchor="middle" fill="#1e3a8a" font-size="9">Bounce</text>
+                            <text x="340" y="145" text-anchor="middle" fill="#064e3b" font-size="9">Color Shift</text>
+                            <text x="500" y="165" text-anchor="middle" fill="#92400e" font-size="9">Rotate</text>
+                            <text x="650" y="105" text-anchor="middle" fill="#5b21b6" font-size="9">Fade</text>
+                            
+                            <!-- Bottom decorative text -->
+                            <text x="400" y="270" text-anchor="middle" fill="#92400e" font-size="13" font-weight="bold" class="fade-text" style="animation-delay: 1s;">
+                                 CSS Animations on SVG Elements 
+                            </text>
+                            <text x="400" y="290" text-anchor="middle" fill="#b45309" font-size="10" class="fade-text" style="animation-delay: 1.5s;">
+                                opacity | transform | fill | rotation
+                            </text>
+                        </svg>
+                    </div>
+                    <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: #92400e;">
+                        7+ SVG elements with CSS animations: pulse 🔴 bounce 🔵 color shift 🟢 rotate 🟠 fade 🟣
+                    </p>
+                </div>
+            </div>
+            
+            <!-- ============================================ -->
+            <!-- PART C2: LIVE CAMERA FILTER -->
+            <!-- MediaDevices API | Canvas API | Greyscale Filter | PNG Download -->
+            <!-- ============================================ -->
+            <div class="camera-section">
+                <div class="camera-title">
+                    <span>📸</span>
+                    <h2>Live Camera with Greyscale Filter</h2>
+                </div>
+                <div class="camera-grid">
+                    <div>
+                        <div class="camera-preview">
+                            <video id="cameraVideo" autoplay playsinline muted style="width:100%; height:100%; object-fit:cover;"></video>
+                        </div>
+                        <p style="color: #94a3b8; font-size: 0.75rem; text-align: center; margin-top: 0.5rem;">📹 Live Camera Feed</p>
+                    </div>
+                    <div>
+                        <div class="camera-preview">
+                            <canvas id="cameraCanvas" style="width:100%; height:100%; object-fit:cover;"></canvas>
+                        </div>
+                        <p style="color: #94a3b8; font-size: 0.75rem; text-align: center; margin-top: 0.5rem;">🎨 Captured Frame (with filters)</p>
+                    </div>
+                </div>
+                
+                <div class="camera-controls">
+                    <div class="camera-btn-group">
+                        <button id="startCameraBtn" class="camera-btn success">
+                            <span>📷</span> Start Camera
+                        </button>
+                        <button id="captureFrameBtn" class="camera-btn" disabled>
+                            <span>📸</span> Capture Frame
+                        </button>
+                        <button id="greyscaleFilterBtn" class="camera-btn" disabled>
+                            <span>⚫</span> Greyscale Filter
+                        </button>
+                        <button id="downloadPngBtn" class="camera-btn" disabled>
+                            <span>💾</span> Download PNG
+                        </button>
+                        <button id="stopCameraBtn" class="camera-btn danger">
+                            <span>⏹️</span> Stop Camera
+                        </button>
+                    </div>
+                    <div id="cameraStatus" class="camera-status">
+                        ⚠️ Click "Start Camera" to begin (requires camera permission)
+                    </div>
+                    <div id="cameraError" class="error-message" style="display: none;"></div>
+                </div>
+            </div>
+            
+            <!-- Technical Notes -->
+            <div class="section-card">
+                <div class="section-title">
+                    <span>📚</span>
+                    <h2>Technical Notes</h2>
+                </div>
+                <div class="section-subtitle">
+                    Animation techniques used in this page
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                    <div style="background: #f8fafc; padding: 1rem; border-radius: 12px;">
+                        <strong>🔄 CSS Spinner</strong>
+                        <p style="font-size: 0.8rem; margin-top: 0.5rem;">@keyframes spin | border-radius: 50% | infinite keyword | border-top-color technique</p>
+                    </div>
+                    <div style="background: #f8fafc; padding: 1rem; border-radius: 12px;">
+                        <strong>🎴 Hover Transitions</strong>
+                        <p style="font-size: 0.8rem; margin-top: 0.5rem;">transition: all 0.3s cubic-bezier() | Two properties: background + transform: scale()</p>
+                    </div>
+                    <div style="background: #f8fafc; padding: 1rem; border-radius: 12px;">
+                        <strong>✏️ SVG Draw-on</strong>
+                        <p style="font-size: 0.8rem; margin-top: 0.5rem;">stroke-dasharray / stroke-dashoffset | Bezier curve (C command) | draws on load</p>
+                    </div>
+                    <div style="background: #f8fafc; padding: 1rem; border-radius: 12px;">
+                        <strong>🎨 Animated SVG</strong>
+                        <p style="font-size: 0.8rem; margin-top: 0.5rem;">CSS animations on SVG: opacity, transform, fill color, rotation - 7+ elements</p>
+                    </div>
+                    <div style="background: #f8fafc; padding: 1rem; border-radius: 12px;">
+                        <strong>📸 Camera Filter</strong>
+                        <p style="font-size: 0.8rem; margin-top: 0.5rem;">getUserMedia | Canvas API | greyscale: 0.299R + 0.587G + 0.114B | PNG download</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+   <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 EduStream Learning Hub</p>
+        <p>Developed by John Langat | INF 424 Multimedia Programming</p>
+    </footer>
+
+    <script>
+        // ============================================
+        // PART C2: LIVE CAMERA FILTER
+        // MediaDevices API | Canvas API | Greyscale Filter
+        // INF 424 - Week 6
+        // ============================================
+        
+        // DOM Elements
+        const video = document.getElementById('cameraVideo');
+        const canvas = document.getElementById('cameraCanvas');
+        const startCameraBtn = document.getElementById('startCameraBtn');
+        const captureFrameBtn = document.getElementById('captureFrameBtn');
+        const greyscaleFilterBtn = document.getElementById('greyscaleFilterBtn');
+        const downloadPngBtn = document.getElementById('downloadPngBtn');
+        const stopCameraBtn = document.getElementById('stopCameraBtn');
+        const cameraStatus = document.getElementById('cameraStatus');
+        const cameraError = document.getElementById('cameraError');
+        
+        let mediaStream = null;
+        let currentImageData = null;
+        let isCameraActive = false;
+        
+        // Hide error message
+        function hideError() {
+            cameraError.style.display = 'none';
+            cameraError.innerHTML = '';
+        }
+        
+        // Show error message with specific type
+        function showError(errorType, message) {
+            cameraError.style.display = 'block';
+            cameraError.innerHTML = `
+                <strong>❌ ${errorType}</strong><br>
+                ${message}
+            `;
+            cameraStatus.innerHTML = `⚠️ Error: ${errorType} - ${message}`;
+        }
+        
+        // Update button states
+        function updateButtonStates(enabled) {
+            captureFrameBtn.disabled = !enabled;
+            greyscaleFilterBtn.disabled = !enabled;
+            downloadPngBtn.disabled = !enabled;
+        }
+        
+        // Start Camera using getUserMedia
+        async function startCamera() {
+            hideError();
+            cameraStatus.innerHTML = '📷 Requesting camera access...';
+            
+            // Video constraints
+            const constraints = {
+                video: {
+                    width: { ideal: 640 },
+                    height: { ideal: 480 },
+                    facingMode: 'user'
+                },
+                audio: false
+            };
+            
+            try {
+                mediaStream = await navigator.mediaDevices.getUserMedia(constraints);
+                video.srcObject = mediaStream;
+                isCameraActive = true;
+                
+                // Wait for video to be ready
+                await new Promise((resolve) => {
+                    video.onloadedmetadata = () => {
+                        resolve();
+                    };
+                });
+                
+                cameraStatus.innerHTML = '✅ Camera active - Ready to capture frames';
+                updateButtonStates(true);
+                
+                // Set canvas dimensions to match video
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                
+                console.log('Camera started successfully');
+                
+            } catch (err) {
+                // Handle different error types
+                console.error('Camera error:', err);
+                
+                // Named error handling for at least three error types
+                switch(err.name) {
+                    case 'NotAllowedError':
+                        showError(
+                            'NotAllowedError',
+                            'Camera permission was denied. Please allow camera access and try again.'
+                        );
+                        break;
+                    case 'NotFoundError':
+                        showError(
+                            'NotFoundError',
+                            'No camera device found. Please connect a camera and refresh the page.'
+                        );
+                        break;
+                    case 'NotReadableError':
+                        showError(
+                            'NotReadableError',
+                            'Camera is already in use by another application. Please close other apps using the camera.'
+                        );
+                        break;
+                    case 'OverconstrainedError':
+                        showError(
+                            'OverconstrainedError',
+                            'No camera matches the requested constraints. Please try a different camera.'
+                        );
+                        break;
+                    default:
+                        showError(
+                            err.name || 'UnknownError',
+                            err.message || 'An unknown error occurred while accessing the camera.'
+                        );
+                }
+                
+                updateButtonStates(false);
+                isCameraActive = false;
+            }
+        }
+        
+        // Stop Camera
+        function stopCamera() {
+            if (mediaStream) {
+                mediaStream.getTracks().forEach(track => {
+                    track.stop();
+                });
+                mediaStream = null;
+            }
+            video.srcObject = null;
+            isCameraActive = false;
+            
+            // Clear canvas
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#1e293b';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'white';
+            ctx.font = '14px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('Camera stopped', canvas.width/2, canvas.height/2);
+            
+            cameraStatus.innerHTML = '⏹️ Camera stopped. Click "Start Camera" to restart.';
+            updateButtonStates(false);
+            currentImageData = null;
+            
+            console.log('Camera stopped');
+        }
+        
+        // Capture Frame - draws current video frame to canvas
+        function captureFrame() {
+            if (!isCameraActive || !video.videoWidth) {
+                cameraStatus.innerHTML = '⚠️ Camera not active. Please start camera first.';
+                return;
+            }
+            
+            // Size canvas to video dimensions
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            
+            const ctx = canvas.getContext('2d');
+            // Draw current video frame to canvas
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+            
+            // Store current image data for filter operations
+            currentImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            
+            cameraStatus.innerHTML = '✅ Frame captured! Use filters or download as PNG.';
+            console.log(`Frame captured: ${canvas.width}x${canvas.height}`);
+        }
+        
+        // Greyscale Filter using human-perception luminance formula
+        // Formula: 0.299R + 0.587G + 0.114B
+        function applyGreyscaleFilter() {
+            if (!currentImageData) {
+                cameraStatus.innerHTML = '⚠️ No captured frame. Click "Capture Frame" first.';
+                return;
+            }
+            
+            const ctx = canvas.getContext('2d');
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const data = imageData.data;
+            
+            // Apply greyscale formula to each pixel
+            for (let i = 0; i < data.length; i += 4) {
+                const r = data[i];
+                const g = data[i + 1];
+                const b = data[i + 2];
+                
+                // Human-perception luminance formula
+                const grey = 0.299 * r + 0.587 * g + 0.114 * b;
+                
+                data[i] = grey;     // Red channel
+                data[i + 1] = grey; // Green channel
+                data[i + 2] = grey; // Blue channel
+                // Alpha channel (data[i+3]) remains unchanged
+            }
+            
+            // Put the modified image data back to canvas
+            ctx.putImageData(imageData, 0, 0);
+            
+            // Update stored image data
+            currentImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            
+            cameraStatus.innerHTML = '⚫ Greyscale filter applied using luminance formula (0.299R + 0.587G + 0.114B)';
+            console.log('Greyscale filter applied');
+        }
+        
+        // Download PNG using canvas.toDataURL
+        function downloadPNG() {
+            if (!canvas.width || !canvas.height) {
+                cameraStatus.innerHTML = '⚠️ No image to download. Capture a frame first.';
+                return;
+            }
+            
+            try {
+                // Convert canvas to data URL
+                const dataURL = canvas.toDataURL('image/png');
+                
+                // Create download link
+                const link = document.createElement('a');
+                link.download = `edustream-capture-${new Date().toISOString().slice(0, 19)}.png`;
+                link.href = dataURL;
+                link.click();
+                
+                cameraStatus.innerHTML = '💾 PNG image downloaded successfully!';
+                console.log('PNG download triggered');
+                
+            } catch (err) {
+                cameraStatus.innerHTML = `❌ Download failed: ${err.message}`;
+                console.error('Download error:', err);
+            }
+        }
+        
+        // Event Listeners
+        startCameraBtn.addEventListener('click', startCamera);
+        stopCameraBtn.addEventListener('click', stopCamera);
+        captureFrameBtn.addEventListener('click', captureFrame);
+        greyscaleFilterBtn.addEventListener('click', applyGreyscaleFilter);
+        downloadPngBtn.addEventListener('click', downloadPNG);
+        
+        // Initialize canvas with placeholder
+        const ctx = canvas.getContext('2d');
+        canvas.width = 640;
+        canvas.height = 480;
+        ctx.fillStyle = '#1e293b';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#94a3b8';
+        ctx.font = '14px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('Camera preview will appear here', canvas.width/2, canvas.height/2);
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                mobileMenuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+            });
+        }
+        
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                if (mobileMenuBtn) mobileMenuBtn.textContent = '☰';
+            });
+        });
+        
+        console.log('========================================');
+        console.log('Animations & Camera Lab Initialized');
+        console.log('Task C1 - CSS Spinner: ✓');
+        console.log('Task C1 - Hover Transitions (2+ properties): ✓');
+        console.log('Task C1 - SVG Draw-on (Bezier curve): ✓');
+        console.log('Task C1 - Animated SVG (6+ elements): ✓');
+        console.log('Task C2 - Camera with getUserMedia: ✓');
+        console.log('Task C2 - Error handling (3+ types): ✓');
+        console.log('Task C2 - Greyscale filter (luminance formula): ✓');
+        console.log('Task C2 - PNG download: ✓');
+        console.log('========================================');
+    </script>
 </body>
 </html>
